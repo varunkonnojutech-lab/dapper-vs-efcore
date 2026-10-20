@@ -1,0 +1,1 @@
+{"customizations":{"vscode":{"extensions":["ms-dotnettools.csharp"]}},"image":"mcr.microsoft.com/devcontainers/dotnet:1-8-bookworm","name":"dapper-vs-efcore","postCreateCommand":"dotnet restore"}

@@ -1,0 +1,17 @@
+# Optional: a real SQL Server for the shootout instead of the default SQLite.
+#   docker compose up -d
+#   USE_SQLSERVER=1 dotnet run --project src/DataShootout.Api
+# The connection string in SeedData.cs matches these credentials.
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "SqlShootout!2026"
+    ports:
+      - "1433:1433"
+    volumes:
+      - sqlserver-data:/var/opt/mssql
+
+volumes:
+  sqlserver-data:
